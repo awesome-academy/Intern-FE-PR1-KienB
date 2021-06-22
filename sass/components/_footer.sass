@@ -1,0 +1,40 @@
+@import "./../helpers/_mixins"
+@import "./../helpers/_variables"
+
+footer
+  font-size: 12px
+  background-color: $black
+  .list    
+    padding: 20px
+    @media ($xl)
+      border-bottom: 1px solid $lighterGray
+    &__title
+      text-transform: uppercase
+      font-weight: 600
+      margin-bottom: 20px
+      color: $white
+    &__item
+      margin-bottom: 10px
+      color: $darkerGray
+      &:hover
+        @include text-to-green
+        list-style-type: square
+        transform: translateX(10px)
+  .color-green 
+    color: $green
+  .color-gray
+    color: $gray
+  .icon-text
+    margin: 5px
+    .icon
+      margin-right: 10px
+      &:hover
+        @include text-to-green
+    .text
+      &:hover
+        @include text-to-green
+  .contact-infos
+    padding: 20px
+  .contact-info
+    display: flex
+

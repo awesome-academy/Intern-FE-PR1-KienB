@@ -1,0 +1,19 @@
+@mixin text-to-green 
+  color: $green
+  transition: all .3s
+  cursor: pointer
+
+@mixin border($thickness:0, $color: black, $radius:0)
+  border: $thickness solid $color
+  border-radius: $radius
+
+@mixin flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+@mixin abs-center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)

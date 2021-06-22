@@ -1,0 +1,39 @@
+mixin menu-item(menuItem={name:"default"})
+  .nav__menu-level1-box
+    .nav__menu-level1-item= menuItem.name 
+      if menuItem.menu2 === true 
+        i(class="fas fa-caret-down")
+    if menuItem.menu2 === true 
+      .nav__menu-level2-box
+        +menu-level2(menuItem.menu2Items)
+
+mixin menu-level2(menuItems)  
+  each menuItem in menuItems 
+    ul.nav__menu-level3-box
+      li.nav__menu-level2-item=menuItem.title
+      .nav__menu-level-3
+        +menu-level3(menuItem.items)
+
+mixin menu-level3(items)
+  each item in items 
+    li.nav__menu-level3-item= item
+
+mixin preview-products(products)
+  .preview-products 
+    each product in products
+      .preview-product 
+        img.preview-product__img(src=product.img, alt="product-img")
+        .preview-product__content 
+          .preview-product__name= product.name 
+          .preview-product__price= product.price
+        i(class="fas fa-times")
+mixin list(title="default",items=[])
+  ul.list 
+    li.list__title= title
+    each item in items
+      li.list__item= item
+
+mixin icon-text(icon, text, colorIcon, colorText)
+  .icon-text
+    i.icon(class=(`color-${colorIcon} ${icon}` ))
+    span.text(class=(`color-${colorText}`))= text
