@@ -1,0 +1,10 @@
+extend layouts/layout.pug
+block Modal
+  title Đăng nhập
+  
+block Main 
+  .container.mb-5
+    .mt-3.pb-3.border-bottom-green
+      +page-url(["Trang chủ", "Đăng ký"])
+    h1.mt-3.mb-3 Đăng ký
+    include ././partials/registerForm.pug

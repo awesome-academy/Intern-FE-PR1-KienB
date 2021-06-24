@@ -1,0 +1,41 @@
+extend layouts/layout.pug
+
+block Modal
+  title Tài khoản
+  
+block Main
+  .accountPage
+    .container.mb-5
+      .mt-3.pb-3.border-bottom-green
+        +page-url(["Trang chủ", "Tài khoản"])
+      .row
+        .col-12.order-2.col-xl-9.order-xl-1
+          h1.mt-3.mb-4 Đăng ký 
+          -
+            var trs = [
+              ["Order","Date","Tình trang thanh toán","Tổng","Nợ"],
+              ["#1006","May 13, 2013","Đã thanh toán","250.000d","0"],
+              ["#1006","May 13, 2013","Đã thanh toán","250.000d","0"],
+              ["#1006","May 13, 2013","Đã thanh toán","250.000d","0"]
+            ]
+          table.w-100   
+            each tr,index in trs
+              tr
+                if index==0
+                  each th in tr
+                    th= th 
+                else
+                  each td,index in tr
+                    if index == 2
+                      td.color-red= td
+                    else
+                      td= td
+        .col-12.order-1.col-xl-3.order-xl-2
+          h2.mt-3.mb-4 Chi tiết tài khoản
+          .user.ml-1.mb-4.mt-4
+            i(class="fas fa-user user__icon")
+            .user__info
+              .user__name Giang Lê
+              p.user__mail giangle@gmail.com
+          +icon-text("fas fa-map-marker-alt","Tầng 4 toà nhà A, Hà Tây, Hà Nội", "darkerGray", "darkerGray")
+          +icon-text("fas fa-phone","0123 456 789", "darkerGray", "darkerGray")
