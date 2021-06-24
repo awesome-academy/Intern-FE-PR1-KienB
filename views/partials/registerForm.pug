@@ -1,0 +1,15 @@
+.form
+  .form__title Thông tin cá nhân
+  form.w-100
+    +name-input("Tên trước *", "firstName")
+    +name-input("Tên sau *", "lastName")
+    +name-input("Email *", "email")
+    +name-input("Mật khẩu *", "passWord")
+  .mt-1.mb-4.ml-3 Đăng ký nhận bản tin.
+  .form__title Thông tin đăng nhập
+  form.w-100
+    +name-input("Mật khẩu *", "passWord")
+    +name-input("Xác nhận mật khẩu *", "email")
+  .mt-4.mb-4
+    button.form__button gửi
+    button.form__button.float-right quay lại
