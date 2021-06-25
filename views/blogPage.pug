@@ -1,0 +1,35 @@
+extend layouts/layout.pug
+
+block Modal
+  title Blog
+  
+block Main
+  .blogPage
+    .container
+      .mt-3.pb-3.border-bottom-green.mb-5
+        +page-url(["Trang chủ", "Về chúng tôi"])
+      .row 
+        .d-none.col-xl-3.d-xl-flex.flex-column
+          h3.mb-4 BÀI VIẾT MỚI NHẤT
+          .mb-4 
+            +img-text("./assets/img/img-product.png","11","Đăng bởi Kevin")
+          .mb-4 
+            +img-text("./assets/img/img-product.png","11","Đăng bởi Kevin")
+          .mb-4 
+            +img-text("./assets/img/img-product.png","11","Đăng bởi Kevin")
+          h3.mb-4.strong.mt-3 BLOG TAGS
+          +tag(["Đồng hồ","Túi","Phụ kiện","Giày","Kính","Quần áo"])
+
+          h3.mb-4.strong.mt-4 LATEST VIDE0
+          img(src="./assets/img/video-img.png")
+        .col-12.col-xl-9
+            img.w-100.mb-3(src="./assets/img/blog-img.png", alt="img")
+            h1.mb-5 Nàng béo mặt không ngại diện váy áo nổi bật
+            p  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error consequatur modi voluptatem consequuntur dolore libero neque, nobis hic laborum laboriosam voluptatibus earum dicta esse aperiam provident aut repellendus sequi blanditiis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error consequatur modi voluptatem consequuntur dolore libero neque, nobis hic laborum laboriosam voluptatibus earum dicta esse aperiam provident aut repellendus sequi blanditiis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error consequatur modi voluptatem consequuntur dolore libero neque, nobis hic laborum laboriosam voluptatibus earum dicta esse aperiam provident aut repellendus sequi blanditiis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error consequatur modi voluptatem consequuntur dolore libero neque, nobis hic laborum laboriosam voluptatibus earum dicta esse aperiam provident aut repellendus sequi blanditiis?
+            p.mt-2.mb-5.blogPage__note Ngày 02 tháng 02 năm 2020
+            p.mb-4 tag: 
+              strong Men
+
+            +contact-us()
+            button.form__button.ml-5.mt-3.mb-5 gửi ý kiến
+
