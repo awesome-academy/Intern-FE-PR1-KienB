@@ -1,5 +1,81 @@
 @import "./helpers/_variables.sass"
+@import "./helpers/_mixins"
 
 body 
   font-family: $font-opensans
   color: $black
+
+h1 
+  text-transform: uppercase
+  font-size: 30px
+  font-weight: 400
+  color: $darkerGray
+
+.border-bottom-green
+  border-bottom: 1px solid $green
+
+.page-url 
+  display: flex
+  font-size: 14px
+  &__item
+    margin-right: 4px
+    color: $darkerGray
+    font-weight: 600
+    cursor: pointer
+    &:last-child
+      color: $green
+
+.icon-text
+  margin: 5px
+  display: flex
+  .icon
+    margin-right: 10px
+    &:hover
+      @include text-to-green
+  .text
+    &:hover
+      @include text-to-green
+
+.color-green 
+  color: $green
+
+.color-gray
+  color: $gray
+
+.color-darkerGray
+  color: $darkerGray
+
+.color-red
+  color: $red
+  
+.form 
+  include border(1px, $darkerGray, 2px)
+  background-color: $lighterGray
+  padding: 30px
+  &__title
+    font-size: 18px
+    font-weight: 500
+    text-transform: uppercase
+    margin-bottom: 10px
+  a
+    color: $darkerGray
+    &:hover
+      text-decoration: none
+  &__button
+    outline: none
+    padding: 10px 15px
+    text-transform: uppercase
+    border: none
+    color: $white
+    background: $black
+  form
+    display: flex
+    flex-direction: column
+
+.name-input
+  margin: 10px 0 
+  display: flex
+  flex-direction: column
+  &__name
+    font-size: 14px
+    margin-bottom: 5px

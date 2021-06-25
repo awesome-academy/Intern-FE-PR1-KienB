@@ -37,3 +37,16 @@ mixin icon-text(icon, text, colorIcon, colorText)
   .icon-text
     i.icon(class=(`color-${colorIcon} ${icon}` ))
     span.text(class=(`color-${colorText}`))= text
+
+mixin page-url(pages=[])
+  ul.page-url
+    each page,index in pages
+      if index == 0
+        li.page-url__item= page
+      if index == pages.length - 1
+        li.page-url__item.page-url__item-active= `> ${page}`
+
+mixin name-input(title, name)
+  .name-input
+    label.name-input__name(for=name)= title
+    input.name-input__input(type="text" id=name)
