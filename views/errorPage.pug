@@ -1,0 +1,18 @@
+extend layouts/layout.pug
+
+block Modal
+  title Error page
+
+block Main 
+  .error-page
+    .container.h-100.d-flex.justify-content-center.align-items-center.flex-column
+      img.w-100(src="./assets/img/error-page.png", alt="err")
+      .error__box.d-flex.justify-content-center.align-items-center.flex-column 
+        h3 Đây không phải trang web mà bạn đang tìm kiếm
+        .input-group.mb-3.pr-4.ml-4.mt-3
+          input(type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1")
+          span.input-group-text(id="basic-addon1") 
+            i(class="fas fa-search")
+        ul.d-flex
+          li liên hệ
+          li trang chủ
