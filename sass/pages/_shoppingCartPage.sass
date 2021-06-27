@@ -1,0 +1,26 @@
+.shopping-cart-page
+  .table-box
+    width: 100%
+    overflow: scroll
+  table
+    width: 100%
+    min-width: 500px
+    tr
+      border: 1px solid $gray 
+      text-align: center
+      th
+        border: 1px solid $gray 
+        padding: 10px 5px
+        text-transform: uppercase
+        font-weight: 600
+        color: $darkerGray
+      td
+        padding: 30px 10px
+        vertical-align: top
+      img
+        width: 200px
+        margin-right: auto
+        @media ($lg)
+          width: 100px
+  button:hover
+    background-color: $green
