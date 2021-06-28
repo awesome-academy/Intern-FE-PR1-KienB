@@ -45,6 +45,8 @@ mixin page-url(pages=[])
         li.page-url__item= page
       if index == pages.length - 1
         li.page-url__item.page-url__item-active= `> ${page}`
+      if index!=0 && index != pages.length - 1
+        li.page-url__item= `> ${page}`
 
 mixin name-input(title, name)
   .name-input
