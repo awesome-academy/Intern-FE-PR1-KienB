@@ -73,7 +73,6 @@ h3
     color: $darkerGray
     &:hover
       text-decoration: none
-      
   &__button
     outline: none
     padding: 10px 15px
@@ -260,3 +259,48 @@ h3
       &:hover
         background-color: $green
         color: $white
+
+.group-detail-button
+  button
+    border: 1px solid $gray
+    padding: 10px 10px
+    border-radius: 10px
+    color: $black
+    font-weight: 600
+    background-color: $white
+    &:hover
+      background-color: $green
+      color: $white
+
+.paragraph
+  strong,p
+    font-size: 16px
+    color: $darkerGray
+  strong
+    font-weight: 600
+  .hr
+    width: 50px
+    margin: 10px 0 10px 20px
+    border: 1px solid $lighterGray
+
+.preview-column-products
+  display: flex
+  flex-direction: column
+  &__product
+    display: flex
+    &-img
+      flex-basis: 35%
+    &-info
+      padding: 10px
+      .name
+        font-size: 16px
+        margin-bottom: 5px
+        color: $black
+      i
+        font-size: 12px
+        margin-right: 2px
+      .price
+        font-family: $fontCastoro
+        font-weight: 600
+        font-size: 18px
+        margin-top: 5px
