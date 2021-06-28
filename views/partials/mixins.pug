@@ -50,3 +50,22 @@ mixin name-input(title, name)
   .name-input
     label.name-input__name(for=name)= title
     input.name-input__input(type="text" id=name)
+    
+mixin contact-us()
+  h3.mt-3.mb-4 ĐÓNG GÓP Ý KIẾN
+  form.w-100.w-lg-50
+    +name-input("Tên *", "name")
+    +name-input("Email *", "email")
+    +name-input("Tin nhắn *", "message")
+
+mixin img-text($img, $text1, $text2)
+  .img-text
+    img.img-text__img(src=$img alt="img")
+    .img-text__text-box 
+      p.img-text__price= $text1
+        span.img-text__text /tháng
+      p= $text2
+mixin tag(tags)
+  .tags
+    each tag in tags
+      .tag= tag

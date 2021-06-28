@@ -1,14 +1,25 @@
 @import "./helpers/_variables.sass"
 @import "./helpers/_mixins"
 
+strong, .strong
+  font-weight: bold
+
 body 
   font-family: $font-opensans
   color: $black
-
+  
 h1 
   text-transform: uppercase
-  font-size: 30px
+  font-size: 2rem
   font-weight: 400
+  color: $darkerGray
+
+h2
+  font-size: 1.75rem
+  color: $darkerGray
+
+h3 
+  font-size: 1.5rem
   color: $darkerGray
 
 .border-bottom-green
@@ -73,9 +84,33 @@ h1
     flex-direction: column
 
 .name-input
-  margin: 10px 0 
+  margin: 20px 0 
   display: flex
-  flex-direction: column
+  align-items: center
   &__name
     font-size: 14px
+    margin-right: 20px
+    width: 100px
+  &__input
+    padding: 5px
+    width: 100%
+    
+.img-text
+  display: flex
+  justify-content: flex-start
+  &__img
+    margin-right: 10px
+  &__price
+    font-size: 30px !important
+  &__text
+    font-size: 20px
+
+.tags
+  display: flex
+  flex-wrap: wrap
+  .tag
+    padding: 5px
+    color: $white
+    background-color: $green
+    margin-right: 5px
     margin-bottom: 5px
