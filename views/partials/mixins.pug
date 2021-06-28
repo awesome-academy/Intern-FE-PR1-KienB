@@ -67,7 +67,81 @@ mixin img-text($img, $text1, $text2)
       p.img-text__price= $text1
         span.img-text__text /tháng
       p= $text2
+
 mixin tag(tags)
   .tags
     each tag in tags
       .tag= tag
+      
+mixin product-tag(product)
+  .product-tag 
+    img.w-100(src= product.img, alt="")
+    .product-tag__category= product.category
+    .product-tag__name= product.name
+    hr(size="30")
+    .product-tag__price
+      .product-tag__price-new= product.newPrice
+      .product-tag__price-old= product.oldPrice
+    .product-tag__dropdown-option
+      button Mua hàng 
+      button 
+        i(class="fas fa-heart")
+      button 
+        i(class="fas fa-sync-alt")
+
+mixin product-list(product)
+  .product-list.mb-4
+    .row
+      .col-12.col-sm-4
+        img.w-100(src= product.img, alt="img")
+      .col-12.col-sm-8
+        .product-list__name= product.name
+        .product-list__vote
+          - for (var x = 0; x < product.vote; x++)
+            i(class="fas fa-heart")
+          
+          span (#{product.like} lượt thích)
+        p.mb-3= product.info
+        .product-list__price
+          .product-list__price-new= product.newPrice
+          .product-list__price-old= product.oldPrice
+        .product-list__dropdown-option
+          button Mua hàng 
+          button 
+            i(class="fas fa-heart")
+          button 
+            i(class="fas fa-sync-alt")
+
+mixin column-menu(menu)
+  .column-menu
+    each item in menu
+      ul.menu1
+        li
+          .meu1__item
+            a(href="#")= item.name
+            if item.isMenu2 == true
+              i.float-right(class="fas fa-caret-down")
+          if item.isMenu2 == true 
+            ul.menu2 
+              each item2 in item.menu2
+                li
+                  a(href="#").menu2__item= item2
+
+mixin list-pagination()
+  .list-pagination 
+    .list-option 
+      i.mr-2(class="fas fa-list")
+      i(class="fas fa-th-large")
+    ul.page-option
+      li
+        a(href="#") 
+          i(class="fas fa-caret-left")
+      li 
+        a.active(href="#") 1 
+      li 
+        a(href="#") 2
+      li 
+        a(href="#") 3
+      li
+        a(href="#") 
+          i(class="fas fa-caret-right")

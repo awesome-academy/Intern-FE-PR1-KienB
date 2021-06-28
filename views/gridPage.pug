@@ -1,0 +1,27 @@
+extend layouts/layout.pug
+block Modal
+  title Grid page
+  
+block Main 
+  .gridPage
+    .container.mt-3.mb-3
+      +page-url(["Trang chủ", "Sản phẩm", "Trang sức"])
+    img.banner.w-100(src="./assets/img/banner-Grid.png", alt="banner")
+    .container.mt-3.mb-5
+      .row 
+        .col-12.col-xl-3.mb-3
+          h3.mb-3 
+            i.mr-2(class="fas fa-bars") 
+            span Danh mục sản phẩm
+          +column-menu(gridMenu)
+          h3.mb-3.mt-5 So sánh sản phảm
+          p Bạn chưa có sản phẩm nào để so sánh
+          h3.mb-3.mt-5 Tag sản phẩm
+          +tag(["Hoa tai","Son","Nước hoa","Giày"])
+        .col-12.col-xl-9
+          +list-pagination()
+          .row.mb-3.mt-3
+            each product in gridProducts
+              .col-6.col-sm-4
+                +product-tag(product)
+          +list-pagination()

@@ -63,6 +63,7 @@ h3
   include border(1px, $darkerGray, 2px)
   background-color: $lighterGray
   padding: 30px
+
   &__title
     font-size: 18px
     font-weight: 500
@@ -72,6 +73,7 @@ h3
     color: $darkerGray
     &:hover
       text-decoration: none
+      
   &__button
     outline: none
     padding: 10px 15px
@@ -114,3 +116,147 @@ h3
     background-color: $green
     margin-right: 5px
     margin-bottom: 5px
+
+.column-menu
+  ul
+  .menu1
+    li
+      &:hover .menu2
+        display: block
+      border-bottom: 1px dashed $gray
+      text-transform: uppercase
+      padding: 10px 0
+      i
+        transform: rotate(-90deg)
+        color: $gray
+    .menu2
+      display: none
+      margin-left: 30px
+      li
+        border-bottom: none
+        text-transform: none
+        list-style-type: disc 
+
+  a
+    color: $darkerGray
+    &:hover
+      text-decoration: none
+      color: $green
+
+.list-pagination
+  display: flex
+  justify-content: space-between
+  font-size: 18px
+  margin-bottom: 10px
+  padding-bottom: 10px
+  border-bottom: 1px solid $gray
+
+  .list-option
+    i
+      cursor: pointer
+
+  ul.page-option
+    display: flex
+    li
+      a
+        padding: 5px
+        color: $darkerGray
+        font-weight: bold
+      .active
+        color: $black
+        &:hover
+          text-decoration: none
+
+.product-tag
+  &:hover button
+    display: inline
+  display: flex
+  flex-direction: column
+  text-align: center
+
+  hr
+    color: red
+    width: 20%
+    background-color: $darkerGray
+
+  &__category
+    color: $gray
+    font-weight: bold
+    font-size: 18px
+    margin: 10px 0
+
+  &__name
+    font-size: 18px
+    color: $black
+
+  &__price
+    display: flex
+    justify-content: center
+    font-family: $fontCastoro
+    align-items: center
+    margin-bottom: 10px
+    &-new
+      color: $green
+      margin-right: 2px
+      font-size: 20px
+    &-old
+      color: $gray
+
+  &__dropdown-option
+    height: 50px
+    button
+      display: none
+      @media ( $md )
+        padding: 5px
+      border: 1px solid $gray
+      padding: 10px 10px
+      border-radius: 10px
+      color: $black
+      font-weight: 600
+      background-color: $white
+      &:hover
+        background-color: $green
+        color: $white
+
+.product-list
+  &__name
+    font-size: 18px
+    color: $black
+    margin-bottom: 10px
+    margin-top: 10px
+
+  &__vote
+    margin-bottom: 10px
+    i
+      font-size: 14px
+      margin-right: 2px
+    span
+      color: $gray
+
+  p
+    line-height: 1.3
+
+  &__price
+    display: flex
+    font-family: $fontCastoro
+    align-items: center
+    margin-bottom: 10px
+    &-new
+      color: $black
+      margin-right: 2px
+      font-size: 24px
+    &-old
+      color: $gray
+
+  &__dropdown-option
+    height: 50px
+    button
+      border: 1px solid $gray
+      padding: 10px 10px
+      border-radius: 10px
+      color: $black
+      font-weight: 600
+      background-color: $white
+      &:hover
+        background-color: $green
+        color: $white
