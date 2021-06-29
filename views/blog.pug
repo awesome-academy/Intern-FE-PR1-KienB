@@ -1,0 +1,17 @@
+extend layouts/layout.pug
+block Modal
+  title Blog
+  
+block Main 
+  .blog
+    .container.mt-3.mb-3
+      .mt-3.pb-3.border-bottom-green
+        +page-url(["Trang chủ", "Liên hệ"])
+    .container.mt-3.mb-5
+      h1.mb-5 Blog
+      +list-pagination()
+      .row.mb-3.mt-3
+        each blog in blogs
+          .col-xl-4.col-sm-6.mb-5
+            +blog-tag(blog)
+      +list-pagination()

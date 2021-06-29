@@ -3,5 +3,79 @@ block Modal
   title Trang chủ
   
 block Main 
-  h1 This is new main page
-  
+  .homePage
+    img.w-100(src="./assets/img/bg-header.png", alt="banner")
+    .container
+      .row
+        each item in homePagePecs
+          .homePage__specs.col-12.col-md-4.d-flex.justify-content.align-items-center.flex-column
+            i(class=item.icon)
+            p= item.content
+      .homePage__imgs
+        each img in homePageImgs 
+          .homePage__img
+            img.w-100(src=img, alt="banner")
+      .slogan.row
+        .col-sm-4.col-xl-2
+          img.slogan__img-dt(src="./assets/img/slogan-avatar.png", alt="slogan avatar")
+        .col-sm-8.d-flex.flex-column.justify-content-center.col-xl-6
+          p.mb-2= homePageSlogan
+          .d-flex.align-items-center
+            img.mr-3.slogan__img-mb(src="./assets/img/slogan-avatar.png", alt="slogan avatar")
+            p.text-uppercase tutile
+            span _ Giám đốc phát triển
+    .best-product
+      .best-product__title
+        h3.d-inline-block Sản phẩm mới 
+        h2.d-inline-block Sản phẩm bán chạy 
+        h3.d-inline-block Sản phẩm đặc biệt
+      .d-flex.justify-content-center
+        img.mb-3.mt-3(src="./assets/img/home-page-hr.png", alt="thẻ hr")
+      .list-category.mb-5
+        ul
+          each category in homePageCategory
+            li.category= ` ${category}`
+      .product-box
+        .product-box__products.mb-5.mt-5
+            each product in homePageProducts
+              .product-box__product
+                +product-tag(product)
+      .list-box
+        .list-socials
+            each social in homePageSocial
+              .social 
+                .social-icon
+                  i(class=social.icon)
+                .social-name= social.name
+      .background-white.mt-5
+        .container
+          .row
+            .col-xl-4.col-md-6 
+              .d-flex.justify-content-center.flex-column.align-items-center
+                h4 Về chúng tôi
+                img.mb-3.mt-3(src="./assets/img/home-page-hr.png", alt="thẻ hr")
+                .about-us.w-100.d-flex.flex-column
+                  img.mb-3.w-50(src="./assets/img/logo-header.png", alt="logo")
+                  strong.mb-2 Giới thiệu về mỹ phẩm Handmade Mandala
+                  p.mb-2= homePageSlogan
+                  a(href="#") Xem thêm
+            .col-xl-4.col-md-6
+              .d-flex.justify-content-center.flex-column.align-items-center
+                h4 Blog
+                img.mb-3.mt-3(src="./assets/img/home-page-hr.png", alt="thẻ hr")
+                +blog-tag(homePageBlog)
+            .col-xl-4.col-md-12
+              .row
+                .col-12.col-md-6.col-xl-12
+                  .d-flex.justify-content-center.flex-column.align-items-center
+                    h4 Gửi email cho chúng tôi
+                    img.mb-3.mt-3(src="./assets/img/home-page-hr.png", alt="thẻ hr")
+                    .contact-us.w-100   
+                      input.mb-2.w-100(type="text" placeholder="Email của ban")
+                      p Gửi để nhận những ưu đãi mới nhất
+                      button.form__button.ml-3.mt-3 Gửi
+                .col-12.col-md-6.col-xl-12
+                  .d-flex.justify-content-center.flex-column.align-items-center.mt-4
+                    h4 Tag sản phẩm
+                    img.mb-3.mt-3(src="./assets/img/home-page-hr.png", alt="Thẻ hr")
+                    +tag(["Đồng hồ","Túi","Quần áo","Phụ kiện","Giày dép","Mũ nón","Mỹ phẩm","Sữa rửa mặt"])
