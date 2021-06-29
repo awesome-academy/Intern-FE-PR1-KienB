@@ -145,3 +145,21 @@ mixin list-pagination()
       li
         a(href="#") 
           i(class="fas fa-caret-right")
+
+mixin paragraph(title, content)
+  .paragraph
+    strong= title
+    .hr
+    p=content
+
+mixin preview-column-products(products)
+  .preview-column-products
+    each product in products
+      .preview-column-products__product 
+        .preview-column-products__product-img
+          img.w-100(src=product.img, alt="img")
+        .preview-column-products__product-info
+          .name= product.name
+          - for (var x = 0; x < product.vote; x++)
+            i(class="fas fa-heart")
+          .price= product.newPrice
