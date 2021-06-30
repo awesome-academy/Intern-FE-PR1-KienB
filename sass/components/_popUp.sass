@@ -1,48 +1,57 @@
 .popUp
+  background-color: $blackOpacity
   height: 100vh
-  width: 100vw
+  left: 0
   position: fixed
   top: 0
-  left: 0
-  background-color: $blackOpacity
+  width: 100vw
   z-index: 1000
   @include flex-center
+  -webkit-box-orient: vertical
+  -webkit-box-direction: normal
+  -ms-flex-direction: column
   flex-direction: column
   
   i
-    font-size: 30px
     color: $gray
-    margin-bottom: 10px
+    font-size: 3.0rem
+    margin-bottom: 1.0rem
     &:hover
       color: $white
       cursor: pointer
     @media ($md)
+      margin-top: 3.0rem
       position: absolute
       top: 0 
-      margin-top: 30px
 
   &__box
     background-color: $white
     background-image: url(./../assets/img/popUp-bg.png)
     background-size: cover
     background-position: center center
-    width: 500px
-    height: 500px
     border-radius: 50%
+    height: 50.0rem
+    width: 50.0rem
     @include flex-center
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
     @media ($md)
-      width: 100%
-      height: 100%
       border-radius: 0
+      height: 100%
+      width: 100%
 
     h1
       color: $black
       font-weight: 600
-      margin-bottom: 15px
+      margin-bottom: 1.5rem
 
     form 
       @include flex-center
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -ms-flex-direction: column
       flex-direction: column
 
     p
@@ -51,11 +60,11 @@
       line-height: 1.4
 
     input
-      margin-top: 10px
-      width: 300px
-      border: 1px solid $darkerGray
-      border-radius: 15px
-      padding: 2px 20px
+      border: .1rem solid $darkerGray
+      border-radius: 1.5rem
+      margin-top: 1.0rem
+      padding: .2rem 2.0rem
+      width: 30.0rem
       &::-webkit-input-placeholder,
       &:-ms-input-placeholder, 
       &::placeholder 
@@ -63,7 +72,7 @@
         color: $darkerGray
 
     button
-      width: 100px
-      margin-top: 15px
-      border: none
       background-color: $white
+      border: none
+      margin-top: 1.5rem
+      width: 10.0rem

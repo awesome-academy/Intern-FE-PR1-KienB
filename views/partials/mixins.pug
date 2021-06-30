@@ -27,6 +27,7 @@ mixin preview-products(products)
           .preview-product__name= product.name 
           .preview-product__price= product.price
         i(class="fas fa-times")
+        
 mixin list(title="default",items=[])
   ul.list 
     li.list__title= title
@@ -175,6 +176,6 @@ mixin blog-tag(blog)
         strong.mb-2= blog.title
       p= blog.content
       .note= blog.note
-      .d-flex.justify-content-between
+      .d-block
         a(href="#") Đọc thêm
-        a(href="$") #{blog.comments} bình luận
+        a.float-right(href="$") #{blog.comments} bình luận

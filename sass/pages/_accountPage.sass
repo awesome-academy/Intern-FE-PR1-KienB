@@ -1,22 +1,24 @@
 .accountPage
   .user
-    display: flex
     color: $darkerGray
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
     &__icon
-      margin-right: 10px
       flex-wrap: nowrap
+      margin-right: 1.0rem
     &__name
-      font-size: 20px   
+      font-size: 2.0rem   
   table
-    border: 1px solid $gray
+    border: .1rem solid $gray
     tr
-      border-bottom: 1px solid $gray
+      border-bottom: .1rem solid $gray
       th
         background-color: $lighterGray
+        font-weight: 600
+        padding: 1.5rem 0
         text-align: center
         text-transform: uppercase
-        font-weight: 600
-        padding: 15px 0
       td
+        padding: 1.5rem 0
         text-align: center
-        padding: 15px 0

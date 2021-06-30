@@ -8,12 +8,12 @@ header
           .d-flex.align-items-center
             .nav__logo
               img.w-100(src="./assets/img/logo-header.png", alt="logo")
-        .col-6.order-2.order-xl-4
-        .col-xl-8.order-4.order-xl-2.d-none.d-xl-flex
+        .col-5.col-sm-6.order-2.order-xl-4
+        .col-xl-8.order-4.order-xl-2.d-none.d-xl-flex.justify-content-center
           .nav__menu-level1.d-flex.justify-content-center.align-items-center.h-100
             each menuItem in menuItems
               +menu-item(menuItem)
-        .col-3.col-xl-2.order-3
+        .col-4.col-sm-3.col-xl-2.order-3
           .nav__icons.h-100.d-flex
             .nav__item
               img.nav__item-icon(src="./assets/img/cart-icon.png", alt="cart-icon")
