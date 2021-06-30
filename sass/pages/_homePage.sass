@@ -1,0 +1,126 @@
+.homePage
+  &__specs
+    padding: 20px
+    i
+      font-size: 30px
+      margin-bottom: 10px
+
+  &__imgs
+    display: flex
+    flex-wrap: wrap
+
+  &__img
+    flex-basis: 50%
+    padding: 5px
+    @media ($md)
+      flex-basis: 100%
+
+  p
+    color: $darkerGray
+    line-height: 1.4
+
+  a
+    color: $darkerGray
+    font-size: 12px
+
+  strong 
+    font-weight: 600
+  
+  .slogan
+    padding: 20px 0
+    margin: 20px 0
+    background-image: url("./../assets/img/slogan-img.png")
+    background-repeat: no-repeat
+    background-size: cover
+    span
+      margin-left: 10px
+      color: $darkerGray
+      line-height: 1.4
+      font-weight: 600
+    &__img-dt
+      width: 100%
+      @media ( $sm )
+        display: none
+    &__img-mb
+      display: none
+      @media ( $sm )
+        width: 25%
+        display: block
+        
+  h2,
+  h3
+    font-family: $fontCastoro
+
+  h2
+    color: $green
+    margin: 0 20px
+
+  h3
+    font-size: 18px
+
+  h4
+    text-transform: uppercase
+    font-weight: 600
+  
+  .product-box
+    width: 100%
+    overflow: scroll
+    &__products
+      display: flex
+      min-width: 1400px
+      width: 100%
+    &__product
+      padding: 10px
+  
+  
+  .best-product
+    padding: 20px 0
+    background-image: url("./../assets/img/best-product-bg.png")
+    &__title
+      @include flex-center
+      @media ( $md )
+        margin-left: 10px
+        flex-direction: column
+        align-items: start
+        h2
+          margin: 5px 0
+  
+  .list-category
+    @include flex-center
+    ul
+      display: flex
+      @media ( $md)
+        flex-wrap: wrap
+      .category
+        margin: 0 18px
+        color: $darkerGray
+        list-style-type: initial
+        @media ( $md )
+          flex-basis: 30%
+
+  .product-tag
+    background-color: $white
+
+  .list-box
+    overflow: scroll
+    .list-socials
+      background-color: $white
+      min-width: 1000px
+      overflow: scroll
+      padding: 20px 0 20px 0
+      @include flex-center
+      .social
+        @include flex-center
+        margin: 0 30px
+        font-size: 20px
+        &-icon
+          font-size: 40px
+          margin-right: 10px
+  
+  .contact-us
+    @include flex-center
+    flex-direction: column
+    input
+      padding: 5px 20px
+      border: 1px solid $darkerGray
+      border-radius: 20px

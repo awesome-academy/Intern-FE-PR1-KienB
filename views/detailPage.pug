@@ -16,11 +16,11 @@ block Main
                 i(class="fas fa-arrow-up")
               each img in detailProduct.imgs
                 li 
-                  img.w-100(src=img, alt="img")
+                  img.w-100(src=img, alt="ảnh sản phẩm")
               li
                 i(class="fas fa-arrow-down")
         .col-10.col-xl-6
-            img.w-100(src=detailProduct.imgs[3], alt="img")
+            img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
         .col-12.col-xl-5
           h3.mb-2= detailProduct.name
           .product-code.mb-2= detailProduct.code
@@ -29,16 +29,16 @@ block Main
             .product-price-old= detailProduct.oldPrice
           p.mb-3.product-info= detailProduct.info
           form
-            label Màu sắc
-            select
+            label(for="colorOption") Màu sắc
+            select(id="colorOption" name="colorOption")
               each color in detailProduct.color
                 option= color
-            label Kích thước
-            select
+            label(for="sizeOption") Kích thước
+            select(id="sizeOption" name="sizeOption")
               each size in detailProduct.size
                 option= size
-            label Số lượng
-            input(type="number" value="1")
+            label(for="quantify") Số lượng
+            input(type="number" value="1" id="quantify" name="quantify")
           .group-detail-button.mt-4
             button Mua hàng 
             button 
@@ -58,15 +58,15 @@ block Main
             .box-60.p-2
               +paragraph(paragraph.title,paragraph.content)
             .box-40.p-2
-              img.w-100(src=detailProduct.imgs[3], alt="img")
+              img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
             .box-40.p-2
-              img.w-100(src=detailProduct.imgs[2], alt="img")
+              img.w-100(src=detailProduct.imgs[2], alt="ảnh sản phẩm")
             .box-60.p-2
               +paragraph(paragraph.title,paragraph.content)
             .box-60.p-2
               +paragraph(paragraph.title,paragraph.content)
             .box-40.p-2
-              img.w-100(src=detailProduct.imgs[1], alt="img")
+              img.w-100(src=detailProduct.imgs[1], alt="ảnh sản phẩm")
         .col-xl-3
           .preview-products-box
             h4

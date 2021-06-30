@@ -1,6 +1,12 @@
 @import "./helpers/_variables.sass"
 @import "./helpers/_mixins"
 
+a
+  color: $black
+  &:hover
+    text-decoration: none
+    color: $black
+
 strong, .strong
   font-weight: bold
 
@@ -21,6 +27,9 @@ h2
 h3 
   font-size: 1.5rem
   color: $darkerGray
+
+.background-white
+  background-color: $white
 
 .border-bottom-green
   border-bottom: 1px solid $green
@@ -263,7 +272,7 @@ h3
 .group-detail-button
   button
     border: 1px solid $gray
-    padding: 10px 10px
+    padding: 10px 
     border-radius: 10px
     color: $black
     font-weight: 600
@@ -304,3 +313,21 @@ h3
         font-weight: 600
         font-size: 18px
         margin-top: 5px
+
+.blog-tag
+  &__title
+    border-bottom: 1px solid $darkerGray
+    padding-bottom: 10px
+    margin-bottom: 5px
+  p
+    font-size: 14px
+    margin-bottom: 10px
+  .note
+    font-size: 14px
+    color: $gray
+    padding-bottom: 10px
+    margin-bottom: 5px
+    border-bottom: 1px solid $darkerGray
+  a
+    font-size: 14px
+    color: $darkerGray

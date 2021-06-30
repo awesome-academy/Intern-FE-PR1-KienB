@@ -1,6 +1,6 @@
 mixin menu-item(menuItem={name:"default"})
   .nav__menu-level1-box
-    .nav__menu-level1-item= menuItem.name 
+    a(href=menuItem.link).nav__menu-level1-item= menuItem.name 
       if menuItem.menu2 === true 
         i(class="fas fa-caret-down")
     if menuItem.menu2 === true 
@@ -62,7 +62,7 @@ mixin contact-us()
 
 mixin img-text($img, $text1, $text2)
   .img-text
-    img.img-text__img(src=$img alt="img")
+    img.img-text__img(src=$img alt="avatar")
     .img-text__text-box 
       p.img-text__price= $text1
         span.img-text__text /tháng
@@ -74,26 +74,27 @@ mixin tag(tags)
       .tag= tag
       
 mixin product-tag(product)
-  .product-tag 
-    img.w-100(src= product.img, alt="")
-    .product-tag__category= product.category
-    .product-tag__name= product.name
-    hr(size="30")
-    .product-tag__price
-      .product-tag__price-new= product.newPrice
-      .product-tag__price-old= product.oldPrice
-    .product-tag__dropdown-option
-      button Mua hàng 
-      button 
-        i(class="fas fa-heart")
-      button 
-        i(class="fas fa-sync-alt")
+  a(href="/detailPage.html")
+    .product-tag 
+      img.w-100(src= product.img, alt="Ảnh sản phẩm")
+      .product-tag__category= product.category
+      .product-tag__name= product.name
+      hr(size="30")
+      .product-tag__price
+        .product-tag__price-new= product.newPrice
+        .product-tag__price-old= product.oldPrice
+      .product-tag__dropdown-option
+        button Mua hàng 
+        button 
+          i(class="fas fa-heart")
+        button 
+          i(class="fas fa-sync-alt")
 
 mixin product-list(product)
   .product-list.mb-4
     .row
       .col-12.col-sm-4
-        img.w-100(src= product.img, alt="img")
+        img.w-100(src= product.img, alt="Ảnh sản phẩm")
       .col-12.col-sm-8
         .product-list__name= product.name
         .product-list__vote
@@ -130,8 +131,10 @@ mixin column-menu(menu)
 mixin list-pagination()
   .list-pagination 
     .list-option 
-      i.mr-2(class="fas fa-list")
-      i(class="fas fa-th-large")
+      a(href="/listPage.html") 
+        i.mr-2(class="fas fa-list")
+      a(href="/gridPage.html") 
+        i(class="fas fa-th-large")
     ul.page-option
       li
         a(href="#") 
@@ -157,9 +160,21 @@ mixin preview-column-products(products)
     each product in products
       .preview-column-products__product 
         .preview-column-products__product-img
-          img.w-100(src=product.img, alt="img")
+          img.w-100(src=product.img, alt="product-img")
         .preview-column-products__product-info
           .name= product.name
           - for (var x = 0; x < product.vote; x++)
             i(class="fas fa-heart")
           .price= product.newPrice
+
+mixin blog-tag(blog)
+  a(href="/blogPage.html")
+    .blog-tag
+      img.w-100.mb-2(src=blog.img, alt="blog-img")
+      .blog-tag__title
+        strong.mb-2= blog.title
+      p= blog.content
+      .note= blog.note
+      .d-flex.justify-content-between
+        a(href="#") Đọc thêm
+        a(href="$") #{blog.comments} bình luận
