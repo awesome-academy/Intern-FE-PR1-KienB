@@ -2,76 +2,95 @@
 @import "./../helpers/_variables"
 
 nav
-  border-bottom: 1px solid $gray
+  border-bottom: .1rem solid $gray
   background-color: $whiteOpacity
   .nav
     &__logo
-      margin: 10px 0
+      margin: 1.0rem 0
     &__menu-level1
       @media ($xl)
-        flex-direction: column
         background: $white
+        -webkit-box-orient: vertical
+        -webkit-box-direction: normal
+        -ms-flex-direction: column
+        flex-direction: column
     &__menu-level1-box
       position: relative
       z-index: 1000
       &:hover .nav__menu-level2-box
+        display: -webkit-box
+        display: -ms-flexbox
         display: flex
       @media ($xl)
         &:hover .nav__menu-level2-box
           display: none
     &__menu-level1-item
-      text-transform: uppercase
-      font-weight: 600
-      font-size: 14px
-      padding: 30px 20px
       color: $black
+      font-weight: 600
+      font-size: 1.4rem
+      padding: 3.0rem 2.0rem
+      text-transform: uppercase
       &:hover
         text-decoration: none
         @include text-to-green
         i
-          transform: translate(2px,0px)  
+          -webkit-transform: translate(.2rem,.0rem)
+          -ms-transform: translate(.2rem,.0rem)
+          transform: translate(.2rem,.0rem) 
+          -webkit-transition: all .5s
+          -o-transition: all .5s
           transition: all .5s
       i
-        margin-left: 2px
+        margin-left: .2rem
     &__menu-level2-box
-      display: none
-      flex-direction: row
-      justify-content: space-around
-      position: absolute
-      top: 73px
-      right: 0px
-      transform: translateX(50%)
-      width: 600px
-      padding: 30px
       background-color: $white
-      @include border(2px, $green, 2px)
+      display: none
+      justify-content: space-around
+      flex-direction: row
+      -ms-flex-pack: distribute
+      position: absolute
+      padding: 3.0rem
+      right: .0rem
+      top: 4.3rem
+      -webkit-transform: translateX(50%)
+      -ms-transform: translateX(50%)
+      transform: translateX(50%)
+      width: 60.0rem
+      @include border(.2rem, $green, .2rem)
     &__menu-level2-item
-      padding-bottom: 15px
-      margin-bottom: 10px
-      border-bottom: 1px solid $gray
+      border-bottom: .1rem solid $gray
+      padding-bottom: 1.5rem
+      margin-bottom: 1.0rem
       text-transform: uppercase
       &:hover
         @include text-to-green
     &__menu-level3
+      display: -webkit-box
+      display: -ms-flexbox
       display: flex
-      flex-direction: columns
+      -webkit-box-orient: vertical
+      -webkit-box-direction: normal
+      -ms-flex-direction: column
+      flex-direction: column
     &__menu-level3-box
-      width: 150px
+      width: 15.0rem
     &__menu-level3-item
-      padding: 5px 0
       color: $darkerGray
+      padding: .5rem 0
       &:hover
         @include text-to-green
         list-style-type: square
-        transform: translateX(10px)
+        -webkit-transform: translateX(1.0rem)
+        -ms-transform: translateX(1.0rem)
+        transform: translateX(1.0rem)
     &__item
       cursor: pointer
-      padding-left: 30px
-      padding-right: 20px
+      padding-left: 3.0rem
+      padding-right: 2.0rem
       position: relative
       @media ($md)
-        padding-left: 15px
-        padding-right: 10px
+        padding-left: 1.5rem
+        padding-right: 1.0rem
       &:hover .preview-product__box
         display: block
     &__item-icon
@@ -84,55 +103,72 @@ nav
     display: none
     position: absolute
     z-index: 1000
-    @include border(2px, $green, 2px)
-    top: 75px
-    left: -100px
-    width: 250px
+    @include border(.2rem, $green, .2rem)
     background-color: $white
+    left: -10.0rem
+    top: 7.0rem
+    width: 25.0rem
     @media ($xl)
-      width: 150px
+      width: 28.0rem
+    @media ($sm)
+      width: 15.0rem
   .preview-products
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
     .preview-product
-      padding: 10px
+      padding: 1.0rem
+      display: -webkit-box
+      display: -ms-flexbox
       display: flex
+      -webkit-box-pack: justify
+      -ms-flex-pack: justify
       justify-content: space-between
       &:hover 
         background-color: $lighterGray
       &__name
-        font-size: 18px
+        font-size: 1.8rem
       &__price
-        font-size: 14px
+        font-size: 1.4rem
         font-family: Arial, Helvetica, sans-serif
         color: $green
       i
-        font-size: 12px
+        font-size: 1.2rem
         &:hover
           @include text-to-green
     &__total-price
-      padding: 10px
-      border-top: 1px solid $gray
+      padding: 1.0rem
+      border-top: .1rem solid $gray
   #check:checked ~ .mobile-menu
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
   .mobile-menu
-    font-size: 12px
     display: none
-    position: absolute
-    left: -50px
-    width: 100vw
+    font-size: 1.2rem
     flex-direction: column
-    padding: 10px
-    @include border(2px, $green, 2px)
+    left: -5.0rem
+    padding: 1.0rem
+    position: absolute
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
+    width: 100vw
+    z-index: 1000
+    @include border(.2rem, $green, .2rem)
     background-color: $white
     @media ($xl)
-      top: 55px
+      top: 5.5rem
     @media ($lg)
-      top: 45px
+      top: 4.6rem
     @media ($md)
-      top: 35px
+      top: 3.5rem
     @media ($sm)
-      top: 25px
-      left: -80px
+      top: 2.5rem
+      left: -8.0rem
     &__item
-      padding: 10px 
+      padding: 1.0rem 

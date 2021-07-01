@@ -1,19 +1,24 @@
 .homePage
   &__specs
-    padding: 20px
+    padding: 2.0rem
     i
-      font-size: 30px
-      margin-bottom: 10px
+      font-size: 3.0rem
+      margin-bottom: 1.0rem
 
   &__imgs
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
+    -ms-flex-wrap: wrap
     flex-wrap: wrap
 
   &__img
     flex-basis: 50%
-    padding: 5px
+    -ms-flex-preferred-size: 50%
+    padding: .5rem
     @media ($md)
       flex-basis: 100%
+      -ms-flex-preferred-size: 100%
 
   p
     color: $darkerGray
@@ -21,22 +26,22 @@
 
   a
     color: $darkerGray
-    font-size: 12px
+    font-size: 1.2rem
 
   strong 
     font-weight: 600
   
   .slogan
-    padding: 20px 0
-    margin: 20px 0
     background-image: url("./../assets/img/slogan-img.png")
     background-repeat: no-repeat
     background-size: cover
+    padding: 2.0rem 0
+    margin: 2.0rem 0
     span
-      margin-left: 10px
       color: $darkerGray
-      line-height: 1.4
       font-weight: 600
+      margin-left: 1.0rem
+      line-height: 1.4
     &__img-dt
       width: 100%
       @media ( $sm )
@@ -53,50 +58,88 @@
 
   h2
     color: $green
-    margin: 0 20px
+    margin: 0 2.0rem
 
   h3
-    font-size: 18px
+    font-size: 1.8rem
 
   h4
     text-transform: uppercase
     font-weight: 600
+    
+  .homePageProduct-tl
+    display: none
+    @media ($xl)
+      display: block
+    @media ($sm)
+      display: none
+
+  .homePageProduct-mb
+    display: none
+    @media ($sm)
+      display: block
+
+  .homePageSlide-dt
+    @media ($xl)
+      display: none
+    .home-page-slide-button
+      border: none
+      opacity: .3
+      width: 30rem
+      @media ( $xl )
+        width: 20rem
+      @media ( $md )
+        width: 15rem
+      @media ( $sm )
+        width: 10rem
+        
+      i.slide-icon
+        font-size: 6rem
+        color: $darkerGray
+        @media ( $sm )
+        font-size: 4rem
+        &:hover
+          transform: scale(1.2)
+          transition: all .5s
   
   .product-box
-    width: 100%
-    overflow: scroll
     &__products
+      display: -webkit-box
+      display: -ms-flexbox
       display: flex
-      min-width: 1400px
       width: 100%
     &__product
-      padding: 10px
+      padding: 0rem 1rem
   
   
   .best-product
-    padding: 20px 0
+    padding: 2.0rem 0
     background-image: url("./../assets/img/best-product-bg.png")
     &__title
       @include flex-center
       @media ( $md )
-        margin-left: 10px
-        flex-direction: column
         align-items: start
+        margin-left: 1.0rem
+        flex-direction: column
+        -webkit-box-align: start
+        -ms-flex-align: start
         h2
-          margin: 5px 0
+          margin: .5rem 0
   
   .list-category
     @include flex-center
     ul
       display: flex
       @media ( $md)
+        -ms-flex-wrap: wrap
         flex-wrap: wrap
       .category
-        margin: 0 18px
+        margin: 0 1.8rem
         color: $darkerGray
         list-style-type: initial
         @media ( $md )
           flex-basis: 30%
+          -ms-flex-preferred-size: 30%
 
   .product-tag
     background-color: $white
@@ -105,22 +148,25 @@
     overflow: scroll
     .list-socials
       background-color: $white
-      min-width: 1000px
+      min-width: 100.0rem
       overflow: scroll
-      padding: 20px 0 20px 0
+      padding: 2.0rem 0 2.0rem 0
       @include flex-center
       .social
         @include flex-center
-        margin: 0 30px
-        font-size: 20px
-        &-icon
-          font-size: 40px
-          margin-right: 10px
+        margin: 0 3.0rem
+        font-size: 2.0rem
+        i
+          font-size: 4.0rem
+          margin-right: 1.0rem
   
   .contact-us
     @include flex-center
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    -ms-flex-direction: column
     flex-direction: column
     input
-      padding: 5px 20px
-      border: 1px solid $darkerGray
-      border-radius: 20px
+      border: .1rem solid $darkerGray
+      border-radius: 2.0rem
+      padding: .5rem 2.0rem

@@ -5,26 +5,29 @@ block Modal
 
 block Main 
   .shopping-cart-page 
-    .container.mb-5
-      .mt-3.pb-3.border-bottom-green
-        +page-url(["Trang chủ", "Sản phẩm", "Trang sức"])
-      h1.mt-3.mb-4 Giỏ hàng
-      .table-box
-        table
-          tr 
-            each th in ths
-              th= th
-          each product in products 
+    section
+      .container.mb-5
+        .mt-3.pb-3.border-bottom-green
+          +page-url(["Trang chủ", "Sản phẩm", "Trang sức"])
+    section
+      .container
+        h1.mt-3.mb-4 Giỏ hàng
+        .table-box
+          table
             tr 
-              td 
-                img(src=product.img, alt="Ảnh sản phẩm")
-              td= product.name
-              td= product.price
-              td= product.quantity
-              td= product.totalPrice
-              td 
-                i(class="far fa-trash-alt")
-      .mt-4.mb-5.d-flex.justify-content-end 
-        button.form__button.ml-2 Tiếp tục mua hàng
-        button.form__button.ml-2 Xoá
-        button.form__button.ml-2 Cập nhật
+              each th in ths
+                th= th
+            each product in products 
+              tr 
+                td 
+                  img(src=product.img, alt="Ảnh sản phẩm")
+                td= product.name
+                td= product.price
+                td= product.quantity
+                td= product.totalPrice
+                td 
+                  i(class="far fa-trash-alt")
+        .mt-4.mb-5.d-flex.justify-content-end 
+          button.form__button.ml-2 Tiếp tục mua hàng
+          button.form__button.ml-2 Xoá
+          button.form__button.ml-2 Cập nhật

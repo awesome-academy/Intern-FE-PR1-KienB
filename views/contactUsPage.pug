@@ -6,15 +6,17 @@ block Modal
 block Main
   .contactUsPage
     .container.mb-5
-      .mt-3.pb-3.border-bottom-green
-        +page-url(["Trang chủ", "Liên hệ"])
+      section
+        .mt-3.pb-3.border-bottom-green
+          +page-url(["Trang chủ", "Liên hệ"])
       h1.mt-3.mb-4 Liên hệ
-      .row
-        .col-12.order-2.col-lg-6.order-1
-          img.w-100.mb-3(src="./assets/img/map.png" alt="blog avatar")
-        .col-12.order-1.col-lg-6.order-2
-          h3.mt-3.mb-4 Gửi email cho chúng tôi
-          form.w-100.w-lg-50
-          +name-input("Tên *", "name")
-          +name-input("Email *", "email")
-          +name-input("Tin nhắn *", "message")
+      section
+        .row
+          .col-12.order-2.col-lg-6.order-1
+            img.w-100.mb-3(src="./assets/img/map.png" alt="blog avatar")
+          .col-12.order-1.col-lg-6.order-2
+            h3.mt-3.mb-4 Gửi email cho chúng tôi
+            form.w-100.w-lg-50
+            +name-input("Tên *", "name")
+            +name-input("Email *", "email")
+            +name-input("Tin nhắn *", "message")

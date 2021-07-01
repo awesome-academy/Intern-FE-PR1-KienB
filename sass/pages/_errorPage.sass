@@ -6,11 +6,13 @@
   height: 100vh
   .error
     &__box
+      -webkit-transform: translateY(-100%)
+      -ms-transform: translateY(-100%)
       transform: translateY(-100%)
-      padding-bottom: 50px
+      padding-bottom: 5.0rem
       ul
         li
+          padding: .5rem 2.0rem
           text-transform: uppercase
-          padding: 5px 20px
           &:first-child
-            border-right: 1px solid $gray
+            border-right: .1rem solid $gray

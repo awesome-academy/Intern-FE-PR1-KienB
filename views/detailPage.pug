@@ -5,75 +5,109 @@ block Modal
   
 block Main
   .detailPage
-    .container.mb-5
-      .mt-3.pb-3.border-bottom-green
-        +page-url(["Trang chủ", "Sản phẩm","Trang sức", "Lắc tay"])
-      .row.mt-5
-        .col-2.col-xl-1
-          .preview-product-box.h-100.d-flex.justify-content-center.align-items-center
-            ul.preview-product
-              li
-                i(class="fas fa-arrow-up")
-              each img in detailProduct.imgs
-                li 
-                  img.w-100(src=img, alt="ảnh sản phẩm")
-              li
-                i(class="fas fa-arrow-down")
-        .col-10.col-xl-6
-            img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
-        .col-12.col-xl-5
-          h3.mb-2= detailProduct.name
-          .product-code.mb-2= detailProduct.code
-          .product-price.mb-4
-            .product-price-new= detailProduct.newPrice
-            .product-price-old= detailProduct.oldPrice
-          p.mb-3.product-info= detailProduct.info
-          form
-            label(for="colorOption") Màu sắc
-            select(id="colorOption" name="colorOption")
-              each color in detailProduct.color
-                option= color
-            label(for="sizeOption") Kích thước
-            select(id="sizeOption" name="sizeOption")
-              each size in detailProduct.size
-                option= size
-            label(for="quantify") Số lượng
-            input(type="number" value="1" id="quantify" name="quantify")
-          .group-detail-button.mt-4
-            button Mua hàng 
-            button 
-              i(class="fas fa-heart")
-            button 
-              i(class="fas fa-sync-alt")
-      .row.mt-5
-        .col-12.col-xl-9
-          .infos-title
-            h4
-              a.mr-3.active(href="#") Đặc điểm nổi bật
-            h4
-              a.mr-3(href="#") Thông tin sản phẩm
-            h4
-              a.mr-3(href="#") Đánh giá 
-          .infos-content.mt-4
-            .box-60.p-2
-              +paragraph(paragraph.title,paragraph.content)
-            .box-40.p-2
+    section
+      .container.mb-5
+        .mt-3.pb-3.border-bottom-green
+          +page-url(["Trang chủ", "Sản phẩm","Trang sức", "Lắc tay"])
+    section
+      .container
+        .row.mt-5
+          .col-2.col-xl-1
+            .preview-product-box.h-100.d-flex.justify-content-center.align-items-center
+              ul.preview-product
+                li
+                  i(class="fas fa-arrow-up")
+                each img in detailProduct.imgs
+                  li 
+                    img.w-100(src=img, alt="ảnh sản phẩm")
+                li
+                  i(class="fas fa-arrow-down")
+          .col-10.col-xl-6
               img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
-            .box-40.p-2
-              img.w-100(src=detailProduct.imgs[2], alt="ảnh sản phẩm")
-            .box-60.p-2
-              +paragraph(paragraph.title,paragraph.content)
-            .box-60.p-2
-              +paragraph(paragraph.title,paragraph.content)
-            .box-40.p-2
-              img.w-100(src=detailProduct.imgs[1], alt="ảnh sản phẩm")
-        .col-xl-3
-          .preview-products-box
-            h4
-              a.mr-3.active(href="#") Sản phẩm bán chạy
-            .mt-4.mb-4
-              +preview-column-products(gridProducts)
-            h4
-              a.mr-3.active(href="#") Sản phẩm mua nhiều
-            .mt-4
-              +preview-column-products(gridProducts)
+          .col-12.col-xl-5
+            h3.mb-2= detailProduct.name
+            .product-code.mb-2= detailProduct.code
+            .product-price.mb-4
+              .product-price-new= detailProduct.newPrice
+              .product-price-old= detailProduct.oldPrice
+            p.mb-3.product-info= detailProduct.info
+            form
+              label(for="colorOption") Màu sắc
+              select(id="colorOption" name="colorOption")
+                each color in detailProduct.color
+                  option= color
+              label(for="sizeOption") Kích thước
+              select(id="sizeOption" name="sizeOption")
+                each size in detailProduct.size
+                  option= size
+              label(for="quantify") Số lượng
+              input(type="number" value="1" id="quantify" name="quantify")
+            .group-detail-button.mt-4
+              button Mua hàng 
+              button 
+                i(class="fas fa-heart")
+              button 
+                i(class="fas fa-sync-alt")
+      .container.mb-5
+        .row.mt-5
+          .col-12.col-xl-9
+            article
+              .infos-title
+                div(class="nav " id="nav-tab" role="tablist")
+                  h4.mr-3(class="detail-nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" aria-selected="true") Đặc điểm nổi bật
+                  h4.mr-3(class="detail-nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"  aria-selected="false") Thông tin sản phẩm
+                  h4.mr-3(class="detail-nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"  aria-selected="false") Đánh giá
+              div(class="tab-content" id="nav-tabContent")
+                div(class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab") 
+                  .infos-content.mt-4
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[2], alt="ảnh sản phẩm")
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[1], alt="ảnh sản phẩm")
+                div(class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab") 
+                  .infos-content.mt-4
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[2], alt="ảnh sản phẩm")
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[1], alt="ảnh sản phẩm")
+                div(class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab")
+                  .infos-content.mt-4
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[3], alt="ảnh sản phẩm")
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content)
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[1], alt="ảnh sản phẩm")
+                    .box-40.p-2
+                      img.w-100(src=detailProduct.imgs[2], alt="ảnh sản phẩm")
+                    .box-60.p-2
+                      +paragraph(paragraph.title,paragraph.content) 
+          .col-xl-3
+            section
+              .preview-products-box
+                h4
+                  a.mr-3.active(href="#") Sản phẩm bán chạy
+                .mt-4.mb-4
+                  +preview-column-products(gridProducts)
+                h4
+                  a.mr-3.active(href="#") Sản phẩm mua nhiều
+                .mt-4
+                  +preview-column-products(gridProducts)

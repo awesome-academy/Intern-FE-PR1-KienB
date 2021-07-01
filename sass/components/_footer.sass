@@ -2,26 +2,33 @@
 @import "./../helpers/_variables"
 
 footer
-  font-size: 12px
-  background-color: $black
+  nav
+    background-color: $black
   .list    
-    padding: 20px
+    padding: 2.0rem
     @media ($xl)
-      border-bottom: 1px solid $lighterGray
+      border-bottom: .1rem solid $lighterGray
     &__title
-      text-transform: uppercase
-      font-weight: 600
-      margin-bottom: 20px
       color: $white
+      font-weight: 600
+      margin-bottom: 2.0rem
+      text-transform: uppercase
     &__item
-      margin-bottom: 10px
       color: $darkerGray
+      font-size: 1.2rem
+      margin-bottom: 1.0rem
       &:hover
         @include text-to-green
         list-style-type: square
-        transform: translateX(10px)
+        -webkit-transform: translateX(1.0rem)
+        -ms-transform: translateX(1.0rem)
+        transform: translateX(1.0rem)
   .contact-infos
-    padding: 20px
+    padding: 2.0rem
   .contact-info
+    display: -webkit-box
+    display: -ms-flexbox
     display: flex
-
+    .icon-text
+      i,span
+        font-size: 1.2rem
