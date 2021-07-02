@@ -51,12 +51,15 @@ block Main
       .container.mb-5
         .row.mt-5
           .col-12.col-xl-9
-            article
-              .infos-title
-                div(class="nav " id="nav-tab" role="tablist")
-                  h4.mr-3(class="detail-nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" aria-selected="true") Đặc điểm nổi bật
-                  h4.mr-3(class="detail-nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"  aria-selected="false") Thông tin sản phẩm
-                  h4.mr-3(class="detail-nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"  aria-selected="false") Đánh giá
+            section
+              nav.infos-title
+                ul(class="nav " id="nav-tab" role="tablist")
+                  li
+                    .mr-3(class="detail-nav-link" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" aria-selected="true") Đặc điểm nổi bật
+                  li
+                    .mr-3(class="detail-nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"  aria-selected="false") Thông tin sản phẩm
+                  li
+                    .mr-3(class="detail-nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"  aria-selected="false") Đánh giá
               div(class="tab-content" id="nav-tabContent")
                 div(class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab") 
                   .infos-content.mt-4
